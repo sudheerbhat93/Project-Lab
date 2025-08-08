@@ -38,13 +38,15 @@ sudo yum install -y httpd
 Installs the Apache HTTP server.
 
 ### 2.3 Start Apache now
-
+```
 sudo systemctl start httpd
+```
 
 Starts the web server immediately.
 
 ### 2.4 Enable Apache at boot
 
+```
 sudo systemctl enable httpd
 ```
 Ensures Apache starts automatically after system reboots.
@@ -62,10 +64,12 @@ Your files:
 
 ### 3.2 Copy files to EC2 home directory
 
+```
 scp -i "PATH_TO_PEM_FILE" index.html style.css script.js ec2-user@EC2_PUBLIC_IP:/home/ec2-user/
 ```
 **Example:**
 
+```
 scp -i "D:\path\to\key\key2keyname.pem" index.html style.css script.js ec2-user@<public IP Address>:/home/ec2-user/
 ```
 ⚠ You cannot directly copy to `/var/www/html` via `scp` because it requires **root permissions**.
@@ -79,16 +83,19 @@ scp -i "D:\path\to\key\key2keyname.pem" index.html style.css script.js ec2-user@
 
 ### 4.1 SSH into EC2
 
+```
 ssh -i "PATH_TO_PEM_FILE" ec2-user@EC2_PUBLIC_IP
 ```
 
 ### 4.2 Move files to `/var/www/html`
 
+```
 sudo mv index.html style.css script.js /var/www/html/
 ```
 
 ### 4.3 Verify files
 
+```
 ls /var/www/html
 ```
 
@@ -98,6 +105,7 @@ ls /var/www/html
 
 ## Step 5. Restart Apache
 
+```
 sudo systemctl restart httpd
 ```
 
@@ -108,6 +116,7 @@ sudo systemctl restart httpd
 ## Step 6. Test in Browser
 
 Open:  
+
 ```
 http://<EC2_PUBLIC_IP>/
 ```
