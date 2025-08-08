@@ -25,14 +25,14 @@ Host your website (**HTML**, **CSS**, **JS** files) on an AWS EC2 instance runni
 Apache serves your website from `/var/www/html`.
 
 ### 2.1 Update packages
-
+```
 sudo yum update -y
-
+```
 - Upgrades all installed packages to latest versions.  
 - `-y` answers “yes” to prompts automatically.
 
 ### 2.2 Install Apache
-
+```
 sudo yum install -y httpd
 ```
 Installs the Apache HTTP server.
@@ -40,7 +40,7 @@ Installs the Apache HTTP server.
 ### 2.3 Start Apache now
 
 sudo systemctl start httpd
-```
+
 Starts the web server immediately.
 
 ### 2.4 Enable Apache at boot
