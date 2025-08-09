@@ -4,6 +4,8 @@
 A personal sandbox for exploring **web hosting, deployment, automation, and cloud workflows**.  
 This is where I document my journey as I experiment with AWS, GitHub, CI/CD, DNS, SSL, and other DevOps tools.
 
+The purpose of this repository is to record my journey, processes, and experiments in deploying my personal portfolio website **[sudheerbhat.in](https://sudheerbhat.in)**.  
+
 ---
 
 ## 🌱 About This Repo
