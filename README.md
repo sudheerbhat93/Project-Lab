@@ -1,5 +1,5 @@
-
-# 🚀 Project Lab
+ 
+# 🚀 Project Lab (**[sudheerbhat.in](https://sudheerbhat.in)**)
 
 A personal sandbox for exploring **web hosting, deployment, automation, and cloud workflows**.  
 This is where I document my journey as I experiment with AWS, GitHub, CI/CD, DNS, SSL, and other DevOps tools.
@@ -50,8 +50,8 @@ Each document in the repo focuses on **one task or concept** so it’s easy to f
 
 | Date       | Topic                                         | Status   |
 |------------|-----------------------------------------------|----------|
-| 2025-08-08 | Hosting a static site on EC2 with Apache       | ✅ Done  |
-| _TBD_      | Domain setup & DNS configuration              | ⏳ Planned |
+| 08-08-2025 | Hosting a static site on EC2 with Apache      | ✅ Done  |
+| 08-08-2025 | Domain & DNS Setup                            | ⏳ Planned |
 | _TBD_      | SSL/TLS setup                                 | ⏳ Planned |
 | _TBD_      | GitHub integration & pull from EC2            | ⏳ Planned |
 | _TBD_      | Shell script automation                       | ⏳ Planned |
