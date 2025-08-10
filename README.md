@@ -51,7 +51,7 @@ Each document in the repo focuses on **one task or concept** so it’s easy to f
 | Date       | Topic                                         | Status   |
 |------------|-----------------------------------------------|----------|
 | 08-08-2025 | Hosting a static site on EC2 with Apache      | ✅ Done  |
-| 08-08-2025 | Domain & DNS Setup                            | ⏳ Planned |
+| 08-08-2025 | Domain & DNS Setup                            | ✅ Done  |
 | _TBD_      | SSL/TLS setup                                 | ⏳ Planned |
 | _TBD_      | GitHub integration & pull from EC2            | ⏳ Planned |
 | _TBD_      | Shell script automation                       | ⏳ Planned |
@@ -59,6 +59,4 @@ Each document in the repo focuses on **one task or concept** so it’s easy to f
 | _TBD_      | Jenkins CI/CD pipeline                        | ⏳ Planned |
 
 ---
-
-💡 _"The best way to learn is to build, break, and rebuild."_  
 
