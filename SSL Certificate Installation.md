@@ -6,9 +6,10 @@
 
 
 ## **Step1: Go to ZeroSSL to Generate SSL Certificate**  
-Go to [ZeroSSL](https://zerossl.com/)
-Enter your domain name: sudheerbhat.in 
-Choose the free 90-day certificate option.
+
+- 1. Go to [ZeroSSL](https://zerossl.com)  
+- 2. Enter your domain name: 
+- 3. Choose the **free 90-day certificate** option.
 
 
 ---
@@ -53,7 +54,7 @@ This is the path ZeroSSL expects to find the verification file. SeroSSL wants to
 scp -i "your-key.pem" "auth-file.txt" ec2-user@your-ec2-ip:/tmp/
 ```
 
-We copy to /tmp first because /etc and /var/www often require root permission.
+We copy to `/tmp` first because `/etc` and `/var/www` often require root permission.
 
 
 ---
@@ -65,7 +66,7 @@ We copy to /tmp first because /etc and /var/www often require root permission.
 sudo mv /tmp/auth-file.txt /var/www/html/.well-known/pki-validation/
 ```
 
-This will move the file from tmp folder to pki-validation folder, where Zerossl wants them to verify the domain 
+This will move the file from `tmp` folder to `pki-validation` folder, where Zerossl wants them to verify the domain 
 
 
 ---
@@ -73,7 +74,7 @@ This will move the file from tmp folder to pki-validation folder, where Zerossl 
 ## **Step7: Verify File is Accessible in Browser**  
 
 Visit:  
-[http://sudheerbhat.in/.well-known/pki-validation/auth-file.txt](http://sudheerbhat.in/.well-known/pki-validation/auth-file.txt)
+[http://yourdomainname/.well-known/pki-validation/auth-file.txt](http://sudheerbhat.in/.well-known/pki-validation/auth-file.txt)
 
 If your browser can load the file, ZeroSSL can too.
 
@@ -109,28 +110,28 @@ These three files are all Apache needs to serve HTTPS.
 ```
 sudo mkdir -p /etc/httpd/ssl
 ```
-We store certificates in /etc/httpd/ssl so web server knows where to find them.
+We store certificates in `/etc/httpd/ssl so web server knows where to find them.
 
 
 ---
 
-## **step11: Copy SSL Files to EC2**  
+## **Step11: Copy SSL Files to EC2**  
 
 Exit from EC2, and then copy the 3 files to tmp folder in EC2
 
 ```
 scp -i "your-key.pem" certificate.crt ec2-user@your-ec2-ip:/tmp/
 ```
-Repeat for private.key and ca_bundle.crt.
+Repeat for `private.key` and `ca_bundle.crt`.
 
-Then SSH to EC2, and move the files from tmp to ssl folder
+Then SSH to EC2, and move the files from `/tmp` to `/ssl` folder
 
 ```
 sudo mv /tmp/certificate.crt /etc/httpd/ssl/
 ```
-Repeat for private.key and ca_bundle.crt.
+Repeat for `private.key` and `ca_bundle.crt`.
 
-Same two-step process as before — upload to /tmp, then move to /etc/httpd/ssl with root permissions.
+Same two-step process as before — upload to `/tmp`, then move to `/etc/httpd/ssl` with root permissions.
 
 
 ---
@@ -139,7 +140,7 @@ Same two-step process as before — upload to /tmp, then move to /etc/httpd/ssl 
 ## **Step12: Configure Apache for SSL**  
 
 The goal here is to tell Apache:  
-- Where the certificate files are (the ones you copied into `/etc/httpd/ssl`)  
+- Where the certificate files are (the ones you copied into `/etc/httpd/ssl`
 - Which domain they apply to  
 - Which port to use for secure connections (443)
 
@@ -151,7 +152,7 @@ Edit that file using:
 ```
 sudo nano /etc/httpd/conf.d/ssl.conf
 ```
-This command opens the ssl.conf file for editing.
+This command opens the `ssl.conf` file for editing.
 
 
 ###  Replace or Add the <VirtualHost> block
@@ -173,21 +174,22 @@ This command opens the ssl.conf file for editing.
 </VirtualHost>
 ```
 
-###Save and exit
-If using nano:
-Press CTRL + O → Save file
-Press Enter → Confirm filename
-Press CTRL + X → Exit editor
+### Save and exit
+- Press `CTRL + O` → Save file  
+- Press `Enter` → Confirm filename  
+- Press `CTRL + X` → Exit editor
 
 ### What this does
-<VirtualHost *:443> → Tells Apache to handle HTTPS traffic on port 443 for all IPs.
-ServerName sudheerbhat.in → Your domain name.
-DocumentRoot /var/www/html → Where your site’s files are stored.
-SSLEngine on → Enables SSL encryption for this virtual host.
-SSLCertificateFile → Path to your certificate.crt (public cert).
-SSLCertificateKeyFile → Path to your private.key (keep secret!).
-SSLCertificateChainFile → Path to your ca_bundle.crt (intermediate certs).
-<Directory /var/www/html> → Allows .htaccess to override rules.
+
+- `<VirtualHost *:443>` → Tells Apache to handle HTTPS traffic on port 443 for all IPs.  
+- `ServerName sudheerbhat.in` → Your domain name.  
+- `DocumentRoot /var/www/html` → Where your site’s files are stored.  
+- `SSLEngine on` → Enables SSL encryption for this virtual host.  
+- `SSLCertificateFile` → Path to your `certificate.crt` (public cert).  
+- `SSLCertificateKeyFile` → Path to your `private.key` (keep secret!).  
+- `SSLCertificateChainFile` → Path to your `ca_bundle.crt` (intermediate certs).  
+- `<Directory /var/www/html>` → Allows `.htaccess` to override rules.
+
 
 ---
 
@@ -204,9 +206,9 @@ Restarting Apache reloads the configuration files so SSL settings take effect.
 ## **Step14: ERROR: Invalid command 'SSLEngine'**  
 
 **Why it happened:**  
-SSLEngine is not a built-in Apache command.
-It comes from the mod_ssl module.
-If mod_ssl isn’t installed or isn’t loaded, Apache won’t recognize it — hence the error.
+- SSLEngine is not a built-in Apache command.
+- It comes from the mod_ssl module.
+- If mod_ssl isn’t installed or isn’t loaded, Apache won’t recognize it — hence the error.
 
 **Fix:**  
 
@@ -260,9 +262,9 @@ sudo systemctl restart httpd
 sudo ss -tuln | grep 443
 ```
 You should now see output similar to:
-
+```
 tcp    LISTEN     0      511    *:443       *:*
-
+```
 
 ---
 
