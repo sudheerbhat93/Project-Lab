@@ -51,8 +51,8 @@ Each document in the repo focuses on **one task or concept** so it’s easy to f
 | Date       | Topic                                         | Status   |
 |------------|-----------------------------------------------|----------|
 | 08-08-2025 | Hosting a static site on EC2 with Apache      | ✅ Done  |
-| 08-08-2025 | Domain & DNS Setup                            | ✅ Done  |
-| _TBD_      | SSL/TLS setup                                 | ⏳ Planned |
+| 09-08-2025 | Domain & DNS Setup                            | ✅ Done  |
+| 10-08-2025 | SSL/TLS setup                                 | ✅ Done  |
 | _TBD_      | GitHub integration & pull from EC2            | ⏳ Planned |
 | _TBD_      | Shell script automation                       | ⏳ Planned |
 | _TBD_      | Cloudflare & CDN configuration                | ⏳ Planned |
