@@ -17,7 +17,7 @@ Till now, the name servers for the domain were managed by GoDaddy. We will now s
 - After this step, DNS for the domain is now managed by Cloudflare.
 
 ---
-## I experimented with following options
+#### I experimented with following options
 ---
 
 ## Step 2: Enabling Proxy Status
@@ -47,7 +47,7 @@ By enabling proxy status in Cloudflare:
     - **Field:** `Country ` 
     - **Operator:** `Equals ` 
     - **Value:** `India`  
-- Select **Block** for the action, then click **Deploy**.  
+- Select `**Block**` for the action, then click **Deploy**.  
 - Now, when loading the website from a blocked country (India in this case), requests will be blocked and the user will see:  
  
 
@@ -61,7 +61,7 @@ By enabling proxy status in Cloudflare:
   - **Field:** `URI Path`  
   - **Operator:** `Wildcard`  
   - **Value:** `/`  
-- Select **Managed Challenge** for the action, then click **Deploy**.  
+- Select `**Managed Challenge**` for the action, then click **Deploy**.  
 - Now, when loading the website, you will be verified if human.  
 - Sometimes you will be asked to tick the box, and sometimes it will verify automatically.
 
