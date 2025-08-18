@@ -55,7 +55,7 @@ Each document in the repo focuses on **one task or concept** so it’s easy to f
 | 10-08-2025 | SSL/TLS setup                                 | ✅ Done  |
 | 15-08-2025 | GitHub integration & pull from EC2            | ✅ Done  |
 | 15-08-2025 | Shell script automation                       | ✅ Done  |
-| _TBD_      | Cloudflare & CDN configuration                | ⏳ Planned |
+| 18-08-2025 | Cloudflare-setup                              | ✅ Done  |
 | _TBD_      | Jenkins CI/CD pipeline                        | ⏳ Planned |
 
 ---
